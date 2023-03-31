@@ -6,8 +6,8 @@ import time
 from selenium.webdriver.common.keys import Keys
 import os
 
-CHROME_PATH = r"C:\Users\user\OneDrive - Whitireia and WelTec\Desktop\Bianca\IT\Web Development\chromedriver.exe"
-TWITTER_EMAIL = "biancafiedalan31@yahoo.com"
+CHROME_PATH = os.environ.get("CHROME_PATH")
+TWITTER_EMAIL = os.environ.get("MY_EMAIL")
 
 class InternetSpeedTwitterBot:
 
@@ -50,7 +50,7 @@ class InternetSpeedTwitterBot:
         time.sleep(7)
         type_msg = self.driver.find_element(By.CSS_SELECTOR, '.DraftEditor-editorContainer div')
         type_msg.click()
-        type_msg.send_keys("MY FIRST TWITTER BOT LETS GOOOOOOOOOOOOOO!!")
+        type_msg.send_keys("Hey @SparkNZ. My internet seems slower than you promised in your website. Please do something about this.")
         type_msg.send_keys(Keys.RETURN)
 
         time.sleep(5)
